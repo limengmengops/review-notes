@@ -1,0 +1,22 @@
+{
+  "name": "interview-note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "element-ui": "^2.13.0",
+    "vue": "^2.6.10",
+    "vuepress": "^1.2.0"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "author": "",
+  "license": "ISC"
+}

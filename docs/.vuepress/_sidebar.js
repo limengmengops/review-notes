@@ -1,0 +1,38 @@
+
+module.exports={
+    '/vue/':[
+        {
+            title:'VUE-基础',
+            collapsable:true,
+            sidebarDepth:1,
+            children:[
+                ['生命周期','生命周期'],
+                ['路由配置','路由配置'],
+                ['基础语法','基础语法'],
+            ]
+        },
+        {
+            title:'VUE-源码',
+            collapsable:true,
+            sidebarDepth:1,
+            children:[
+                ['双向绑定原理','双向绑定原理'],
+                ['虚拟DOM原理','虚拟DOM原理'],
+                ['vuex原理','vuex原理'],
+                ['promise实现原理','promise实现原理'],
+                ['浏览器渲染机制','浏览器渲染机制'],
+            ]
+        }
+    ],
+    '/webpack/':[
+        {
+            title:'webpack',
+            collapsable:true,
+            sidebarDepth:1,
+            children:[
+                ['基础配置','基础配置'],
+                ['性能优化','性能优化'],
+            ]
+        }
+    ]
+};
