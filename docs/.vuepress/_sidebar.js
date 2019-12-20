@@ -34,5 +34,16 @@ module.exports={
                 ['性能优化','性能优化'],
             ]
         }
+    ],
+    '*':[
+        {
+            title:'404',
+            path:'/*',
+            collapsable:true,
+            sidebarDepth:0,
+            children:[
+                ['404','404'],
+            ]
+        }
     ]
 };

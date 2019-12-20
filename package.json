@@ -6,11 +6,21 @@
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "child_process": "^1.0.2"
+  },
   "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.2.0",
+    "@vuepress/plugin-back-to-top": "^1.2.0",
+    "@vuepress/plugin-google-analytics": "^1.2.0",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
+    "@vuepress/plugin-nprogress": "^1.2.0",
     "element-ui": "^2.13.0",
+    "moment": "^2.24.0",
     "vue": "^2.6.10",
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-clean-urls": "1.0.0",
+    "vuepress-plugin-redirect": "^1.2.1"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",

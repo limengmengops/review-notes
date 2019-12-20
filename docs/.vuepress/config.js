@@ -1,4 +1,5 @@
 const path = require('path');
+// const moment = require('moment');
 const navbar = require('./_navbar.js');
 const sidebar = require('./_sidebar.js');
 
@@ -47,16 +48,42 @@ module.exports={
             }
         }
     },
-    plugins: ['@vuepress/nprogress','@vuepress/medium-zoom',
-        '@vuepress/back-to-top',
-        '@vuepress/active-header-links', {
-            sidebarLinkSelector: '.sidebar-link',
-            headerAnchorSelector: '.header-anchor'
-        },
+    plugins: [
+        // '@vuepress/nprogress',
+        // '@vuepress/medium-zoom',
+        // '@vuepress/back-to-top',
+        // '@vuepress/active-header-links', 
+        // {
+        //     sidebarLinkSelector: '.sidebar-link',
+        //     headerAnchorSelector: '.header-anchor'
+        // },
+        // [
+        //     '@vuepress/google-analytics',
+        //     {
+        //         'ga': 'UA-154222368-1' // UA-00000000-0
+        //     }
+        // ],
         [
-            '@vuepress/google-analytics',
+            'vuepress-plugin-clean-urls',
             {
-                'ga': 'UA-154222368-1' // UA-00000000-0
+                normalSuffix: '',
+                indexSuffix: '/',
+                notFoundPath: '/405.html',
+            },
+        ],
+        [
+            '@vuepress/last-updated',
+            {
+              transformer: (timestamp, lang) => {
+                // Don't forget to install moment yourself
+                console.log(timestamp);
+                console.log(lang);
+                const moment = require('moment')
+                moment.locale(lang)
+                return moment(timestamp).fromNow()
+              }
             }
-        ]]
+          ]
+    ],
+        
 }
