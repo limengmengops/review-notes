@@ -11,11 +11,5 @@
 ## 构建工具
 * [webpck](/webpack)
 
-
-<el-button>hello</el-button>
-111
 :tada: :100:
 
-::: slot footer
-# Here might be a page title
-:::
