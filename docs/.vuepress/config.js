@@ -76,8 +76,6 @@ module.exports={
             {
               transformer: (timestamp, lang) => {
                 // Don't forget to install moment yourself
-                console.log(timestamp);
-                console.log(lang);
                 const moment = require('moment')
                 moment.locale(lang)
                 return moment(timestamp).fromNow()
