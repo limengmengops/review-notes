@@ -26,23 +26,35 @@ module.exports={
     ],
     '/webpack/':[
         {
-            title:'webpack',
+            title:'webpack-基础',
             collapsable:true,
             sidebarDepth:1,
             children:[
-                ['基础配置','基础配置'],
-                ['性能优化','性能优化'],
+                ['什么是webpack模块','什么是webpack模块'],
+                ['概念','概念'],
+                ['入口起点','入口起点'],
+                ['输出','输出'],
+                ['模式','模式'],
+                ['loader','loader'],
+                ['插件','插件'],
+                ['配置','配置'],
+                ['模块','模块'],
+                ['模块解析','模块解析'],
+                ['依赖图','依赖图'],
+                ['manifest','manifest'],
+                ['构建目标','构建目标'],
+                ['模块热替换','模块热替换'],
             ]
-        }
-    ],
-    '*':[
+        },
         {
-            title:'404',
-            path:'/*',
+            title:'webpack-原理',
             collapsable:true,
-            sidebarDepth:0,
+            sidebarDepth:1,
             children:[
-                ['404','404'],
+                ['babel原理','babel原理'],
+                ['loader原理','loader原理'],
+                ['模块化原理-commonjs','模块化原理-commonjs'],
+                ['模块化原理-ESModule','模块化原理-ESModule'],
             ]
         }
     ]

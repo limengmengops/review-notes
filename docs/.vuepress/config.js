@@ -49,28 +49,28 @@ module.exports={
         }
     },
     plugins: [
-        // '@vuepress/nprogress',
-        // '@vuepress/medium-zoom',
-        // '@vuepress/back-to-top',
-        // '@vuepress/active-header-links', 
-        // {
-        //     sidebarLinkSelector: '.sidebar-link',
-        //     headerAnchorSelector: '.header-anchor'
-        // },
-        // [
-        //     '@vuepress/google-analytics',
-        //     {
-        //         'ga': 'UA-154222368-1' // UA-00000000-0
-        //     }
-        // ],
+        '@vuepress/nprogress',
+        '@vuepress/medium-zoom',
+        '@vuepress/back-to-top',
+        '@vuepress/active-header-links', 
+        {
+            sidebarLinkSelector: '.sidebar-link',
+            headerAnchorSelector: '.header-anchor'
+        },
         [
-            'vuepress-plugin-clean-urls',
+            '@vuepress/google-analytics',
             {
-                normalSuffix: '',
-                indexSuffix: '/',
-                notFoundPath: '/405.html',
-            },
+                'ga': 'UA-154222368-1' // UA-00000000-0
+            }
         ],
+        // [
+        //     'vuepress-plugin-clean-urls',
+        //     {
+        //         normalSuffix: '',
+        //         indexSuffix: '/',
+        //         notFoundPath: '/405.html',
+        //     },
+        // ],
         [
             '@vuepress/last-updated',
             {
