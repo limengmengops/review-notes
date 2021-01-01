@@ -1,32 +1,28 @@
 {
-  "name": "interview-note",
+  "name": "review-note",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
-  "dependencies": {
-    "child_process": "^1.0.2"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.2.0",
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/plugin-medium-zoom": "^1.2.0",
-    "@vuepress/plugin-nprogress": "^1.2.0",
-    "element-ui": "^2.13.0",
-    "moment": "^2.24.0",
-    "vue": "^2.6.10",
-    "vuepress": "^1.2.0",
-    "vuepress-plugin-clean-urls": "1.0.0",
-    "vuepress-plugin-redirect": "^1.2.1"
-  },
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
-  },
-  "author": "",
-  "license": "ISC"
+    "@vuepress/plugin-nprogress": "^1.7.1",
+    "markdown-it-katex": "^2.0.3",
+    "vuepress": "^1.7.1",
+    "vuepress-plugin-baidu-autopush": "^1.0.1",
+    "vuepress-plugin-code-copy": "^1.0.4",
+    "vuepress-plugin-dynamic-title": "^1.0.0",
+    "vuepress-plugin-git-log": "^1.0.1",
+    "vuepress-plugin-reading-progress": "^1.0.10",
+    "vuepress-theme-reco": "^1.6.1"
+  }
 }

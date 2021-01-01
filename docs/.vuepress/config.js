@@ -1,87 +1,66 @@
-const path = require('path');
-// const moment = require('moment');
-const navbar = require('./_navbar.js');
-const sidebar = require('./_sidebar.js');
-
-module.exports={
-    title:'复盘笔记',
-    description:'个人学习笔记整理',
-    // base:'/note',
-    markdown:{
-        lineNumbers: true,
-        anchor:{ permalink:false },
-        toc:{ includeLevel:[2,3,4]},
-        extendMarkdown: md =>{
-            //使用更多的markdown-it插件！
-            // md.user(require('markdown-it-doc'))
-        }
-    },
-    themeConfig:{
-        displayAllHeaders: false, // 当前活动页面的标题
-        lastUpdated: '最后修改时间', // string | boolean
-        smoothScroll: true,
-        nav:navbar,
-        sidebar:sidebar,
-
-        //----------------git-仓库和编辑链接---------------
-        // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
-        repo: 'GourdErwa/review-notes',
-        // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
-        // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-        repoLabel: 'GitHub',
-        // =以下为可选的编辑链接选项=
-        // 假如你的文档仓库和项目本身不在一个仓库：
-        docsRepo: 'GourdErwa/review-notes',
-        // 假如文档不是放在仓库的根目录下：
-        docsDir: '',
-        // 假如文档放在一个特定的分支下：
-        docsBranch: 'master',
-        // 默认是 false, 设置为 true 来启用
-        editLinks: true,
-        // 默认为 "Edit this page"
-        editLinkText: '帮助我们改善此页面'
-    },
-    configureWebpack:{
-        resolve:{
-            alias:{
-                '@img':path.resolve(__dirname, '@/./public/images')
-            }
-        }
-    },
-    plugins: [
-        '@vuepress/nprogress',
-        '@vuepress/medium-zoom',
-        '@vuepress/back-to-top',
-        '@vuepress/active-header-links', 
-        {
-            sidebarLinkSelector: '.sidebar-link',
-            headerAnchorSelector: '.header-anchor'
-        },
-        [
-            '@vuepress/google-analytics',
-            {
-                'ga': 'UA-154222368-1' // UA-00000000-0
-            }
-        ],
-        // [
-        //     'vuepress-plugin-clean-urls',
-        //     {
-        //         normalSuffix: '',
-        //         indexSuffix: '/',
-        //         notFoundPath: '/405.html',
-        //     },
-        // ],
-        [
-            '@vuepress/last-updated',
-            {
-              transformer: (timestamp, lang) => {
-                // Don't forget to install moment yourself
-                const moment = require('moment')
-                moment.locale(lang)
-                return moment(timestamp).fromNow()
-              }
-            }
-          ]
+// config.js是整个项目的核心配置文件，所有菜单，栏目相关的配置均配置在该模块中
+const themeConfig = require('./config/theme/index.js');
+const pluginConf = require('./config/plugins/index.js')
+module.exports = {
+    title: '萌萌的学习笔记',
+    description: '温故而知新，可以为师矣',
+    dest:'./dist',
+    // port:"6666",
+    head:[
+        // ['link',{rel:'icon', href:'/img/lf.favicon'}],
+        ['link',{rel:'stylesheet', href:'/css/style.css'}],
+        ['script',{charset:'utf-8', type:'text/javascript', src:'/js/main.js'}]
     ],
-        
-}
+    markdown:{
+        lineNumber: true
+    },
+    theme:'reco',
+    themeConfig:{
+        type:'blog',
+        smoothScroll: true,
+        nav: require('./config/nav.js'),
+        sidebar: require('./config/sidebar.js'),
+        sidebarDepth:2,
+        // 自动形成侧边栏导航
+        // sidebar:'auto',
+
+        // 评论模块
+        // valineConfig:{
+        //     appId:'',
+        //     appKey:'',
+        //     recordIP:true,
+        //     placeholder: '来了...',
+        //     visitor:true
+        // },
+        authorAvatar:'/img/lf.jpeg',
+        // 最后更新时间
+        lastUpdate:'最后更新时间',//string | boolean
+        //如果你的文档不在仓库的根部
+        repo:'docs',
+        // 可选，默认为master
+        docsBranch:'source',
+        // editLinks:true,
+        // editLinkText:'在github上编辑此页',
+        anthor:'萌萌',
+        startYears:'2020',
+        // 搜索设置
+        search:true,
+        searchMatchSuggestion: 10,
+        // ICP备案
+        record:'',
+        recordLink:'',
+        // 公网安备备案
+        cyberSecurityRecord:'',
+        cyberSecurityLink:'',
+        //友情链接
+        friendLink:[
+            {
+                title:'午后南杂',
+                desc:'Enjoy when you can , and endure what you must',
+                email:'11567434527@qq.com',
+                link:'https://www.recoluan.com'
+            }
+        ]
+    },
+    plugins:pluginConf
+  }
