@@ -1,0 +1,13 @@
+ /* .navbar .home-link .site-name:before{
+    content:'';
+    display:inline-block;
+    width:1.3rem;
+    height:1.3rem;
+    line-height:1.3rem;
+    background:url('../img/lf.jpeg') no-repeat;
+    background-size:contain;
+}
+
+.navbar .home-link .site-name{
+    font-size:1.5rem;
+} */

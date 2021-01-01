@@ -1,5 +1,3 @@
-/.vuepress/dist/
 
 ##Project exclude paths
 /node_modules/
-/docs/
