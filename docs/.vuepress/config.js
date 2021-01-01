@@ -5,7 +5,7 @@ module.exports = {
     title: '萌萌的学习笔记',
     description: '温故而知新，可以为师矣',
     dest:'./dist',
-    // port:"6666",
+    port:"6666",
     head:[
         // ['link',{rel:'icon', href:'/img/lf.favicon'}],
         ['link',{rel:'stylesheet', href:'/css/style.css'}],
